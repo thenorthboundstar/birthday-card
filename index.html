@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- BASIC PAGE SETUP -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Something For You ❤️</title>
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- GLOBAL BACKGROUND HEARTS (GIF OVERLAY) -->
+    <!-- ===================================== -->
+    <div id="hearts-overlay">
+        <img src="assets/gifs/hearts.gif" alt="hearts">
+    </div>
+
+    <!-- ====================== -->
+    <!-- GLOBAL AUDIO ELEMENT -->
+    <!-- (Music persists entire app) -->
+    <!-- ====================== -->
+    <audio id="bg-music"></audio>
+
+    <!-- ===================================== -->
+    <!-- 1️⃣ OPENING MESSAGE SCREEN -->
+    <!-- ===================================== -->
+    <section class="screen active" id="screen-opening">
+
+        <h1 class="fade-in">
+            Hey, you ❤️
+        </h1>
+
+        <p class="fade-in delay-1">
+            I wanted to do a tiny something this Christmas,
+            because you mean a lot to me.
+        </p>
+
+        <p class="fade-in delay-2">
+            Today is all about celebrating the most amazing
+            person in my world. I’ve created something magical
+            just for you ✨
+        </p>
+
+        <button class="next-btn" onclick="goNextScreen()">
+            <img src="assets/icons/arrow.jpg" alt="Next">
+        </button>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- 2️⃣ MUSIC SELECTION SCREEN -->
+    <!-- ===================================== -->
+    <section class="screen" id="screen-music">
+
+        <h2>Choose a song for our little journey 🎶</h2>
+
+        <div class="music-grid">
+
+            <!-- MUSIC CARD -->
+            <div class="music-card" onclick="playSong('attention.mp3')"
+                 style="background-image: url('assets/herpics/her1.jpg');">
+                <span>Attention</span>
+                <small class="timer">00:00</small>
+            </div>
+
+            <div class="music-card" onclick="playSong('blue.mp3')"
+                 style="background-image: url('assets/herpics/her2.jpeg');">
+                <span>Blue</span>
+                <small class="timer">00:00</small>
+            </div>
+
+            <div class="music-card" onclick="playSong('dandelions.mp3')"
+                 style="background-image: url('assets/herpics/her3.jpeg');">
+                <span>Dandelions</span>
+                <small class="timer">00:00</small>
+            </div>
+
+            <div class="music-card" onclick="playSong('goldenhour.mp3')"
+                 style="background-image: url('assets/herpics/her4.jpeg');">
+                <span>Golden Hour</span>
+                <small class="timer">00:00</small>
+            </div>
+
+            <div class="music-card" onclick="playSong('memories.mp3')"
+                 style="background-image: url('assets/herpics/her5.jpeg');">
+                <span>Memories</span>
+                <small class="timer">00:00</small>
+            </div>
+
+            <div class="music-card" onclick="playSong('sweetbutpsycho.mp3')"
+                 style="background-image: url('assets/herpics/her6.jpeg');">
+                <span>Sweet But Psycho</span>
+                <small class="timer">00:00</small>
+            </div>
+
+        </div>
+
+        <button class="next-btn" onclick="goNextScreen()">Next 💕</button>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- 3️⃣ MINI GAMES SCREEN -->
+    <!-- ===================================== -->
+    <section class="screen" id="screen-games">
+
+        <h2>Let’s play something cute 😄</h2>
+
+        <!-- TIC TAC TOE -->
+        <div id="tic-tac-toe">
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        </div>
+
+        <button class="next-btn" onclick="goNextScreen()">Next 🎂</button>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- 4️⃣ CAKE & CANDLE SCREEN -->
+    <!-- ===================================== -->
+    <section class="screen" id="screen-cake">
+
+        <h2>Make a wish ✨</h2>
+
+        <p>Close your eyes, wish for something… and tap the candle 💭</p>
+
+        <div id="cake-container">
+            <img src="assets/gifs/cake.gif" alt="Cake" id="cake">
+            <div id="candle" onclick="blowCandle()"></div>
+        </div>
+
+        <button class="next-btn" onclick="goNextScreen()">Cut the cake 🍰</button>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- 5️⃣ LITTLE THINGS I WANT YOU TO KNOW -->
+    <!-- ===================================== -->
+    <section class="screen" id="screen-cards">
+
+        <h2>Little things I want you to know 💌</h2>
+
+        <div class="card-grid">
+
+            <div class="flip-card">
+                <div class="card-front">Tap me 💖</div>
+                <div class="card-back">
+                    <img src="assets/herpics/her8.jpeg">
+                    <p>You make my days brighter.</p>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="card-front">Tap me ✨</div>
+                <div class="card-back">
+                    <img src="assets/herpics/her9.jpeg">
+                    <p>Your smile is my favorite.</p>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="card-front">Tap me 💫</div>
+                <div class="card-back">
+                    <img src="assets/herpics/her10.jpeg">
+                    <p>You’re truly one of a kind.</p>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="card-front">Tap me ❤️</div>
+                <div class="card-back">
+                    <img src="assets/herpics/her11.jpeg">
+                    <p>I’m grateful for you every day.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="next-btn" onclick="goNextScreen()">Next 📸</button>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- 6️⃣ PHOTO GALLERY -->
+    <!-- ===================================== -->
+    <section class="screen" id="screen-gallery">
+
+        <h2>Some moments I adore 🥰</h2>
+
+        <div class="gallery-grid">
+            <img src="assets/herpics/her12.jpeg">
+            <img src="assets/herpics/her13.jpeg">
+            <img src="assets/herpics/her14.jpeg">
+            <img src="assets/herpics/her15.jpeg">
+            <img src="assets/herpics/her16.jpeg">
+            <img src="assets/herpics/her17.jpeg">
+            <img src="assets/herpics/her18.jpeg">
+            <img src="assets/herpics/her19.jpeg">
+        </div>
+
+        <button class="next-btn" onclick="goNextScreen()">Open your letter 💌</button>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- 7️⃣ LETTER & ENVELOPE -->
+    <!-- ===================================== -->
+    <section class="screen" id="screen-letter">
+
+        <div id="envelope" onclick="openLetter()">
+            <img src="assets/gifs/envelope.gif" alt="Envelope">
+        </div>
+
+        <div id="letter">
+            <p>
+                (Your birthday letter text goes here 💖)
+            </p>
+        </div>
+
+        <button class="next-btn" onclick="goNextScreen()">Finish ✨</button>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- 8️⃣ FINAL DATE SCREEN -->
+    <!-- ===================================== -->
+    <section class="screen" id="screen-end">
+
+        <h2>Made with love ❤️</h2>
+        <p id="final-date"></p>
+
+    </section>
+
+    <!-- ====================== -->
+    <!-- JAVASCRIPT FILES -->
+    <!-- ====================== -->
+    <script src="js/audio.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/games.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/letter.js"></script>
+
+</body>
+</html>

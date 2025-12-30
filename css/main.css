@@ -1,0 +1,302 @@
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fff4e8, #f6c1cc);
+    color: #1e1e1e;
+    overflow: hidden;
+}
+
+/* ===============================
+   HEARTS OVERLAY
+================================ */
+
+#hearts-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+#hearts-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===============================
+   SCREEN SYSTEM
+================================ */
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 30px 20px;
+    display: none;
+    text-align: center;
+    z-index: 2;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* ===============================
+   TEXT STYLES
+================================ */
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.next-btn {
+    margin-top: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.next-btn img {
+    width: 55px;
+    animation: float 2s ease-in-out infinite;
+}
+
+/* ===============================
+   MUSIC SELECTION
+================================ */
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.music-card {
+    height: 150px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.music-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    border-radius: 20px;
+}
+
+.music-card span,
+.music-card small {
+    position: relative;
+    z-index: 2;
+}
+
+.music-card span {
+    font-weight: bold;
+}
+
+.music-card small {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 0.75rem;
+}
+
+/* ===============================
+   TIC TAC TOE
+================================ */
+
+#tic-tac-toe {
+    width: 240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.cell {
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 15px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   CAKE SECTION
+================================ */
+
+#cake-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+#cake {
+    width: 200px;
+}
+
+#candle {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 40px;
+    background: orange;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,165,0,0.8);
+    cursor: pointer;
+}
+
+/* ===============================
+   FLIP CARDS
+================================ */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.flip-card {
+    perspective: 1000px;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 160px;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front {
+    background: #fff;
+}
+
+.card-back {
+    background: #f6c1cc;
+    transform: rotateY(180deg);
+}
+
+.flip-card {
+    position: relative;
+    height: 160px;
+}
+
+.flip-card.active .card-front {
+    transform: rotateY(180deg);
+}
+
+.flip-card.active .card-back {
+    transform: rotateY(360deg);
+}
+
+.card-back img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+/* ===============================
+   GALLERY
+================================ */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* ===============================
+   LETTER
+================================ */
+
+#envelope img {
+    width: 220px;
+    cursor: pointer;
+}
+
+#letter {
+    display: none;
+    background: #fff4e8;
+    padding: 20px;
+    border-radius: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* ===============================
+   FINAL SCREEN
+================================ */
+
+#screen-end h2 {
+    margin-top: 40vh;
+}
+
+/* ===============================
+   FLOAT ANIMATION
+================================ */
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}

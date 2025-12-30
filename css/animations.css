@@ -1,0 +1,127 @@
+/* ===============================
+   FADE-IN TEXT ANIMATIONS
+================================ */
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.fade-in.delay-1 {
+    animation-delay: 0.8s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 1.6s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   SCREEN TRANSITIONS
+================================ */
+
+.screen {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.screen.active {
+    opacity: 1;
+}
+
+/* ===============================
+   MUSIC CARD HOVER EFFECT
+================================ */
+
+.music-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* ===============================
+   FLIP CARD ANIMATION
+================================ */
+
+.flip-card .card-front,
+.flip-card .card-back {
+    transition: transform 0.8s ease;
+}
+
+.flip-card.active .card-front {
+    transform: rotateY(180deg);
+}
+
+.flip-card.active .card-back {
+    transform: rotateY(360deg);
+}
+
+/* ===============================
+   HEARTS FLOATING BACKGROUND
+================================ */
+
+#hearts-overlay img {
+    animation: heartsFloat 15s linear infinite;
+}
+
+@keyframes heartsFloat {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50px);
+    }
+}
+
+/* ===============================
+   BUTTON PRESS FEEDBACK
+================================ */
+
+.next-btn:active {
+    transform: scale(0.95);
+}
+
+/* ===============================
+   ENVELOPE OPEN EFFECT
+================================ */
+
+#envelope {
+    transition: transform 0.6s ease;
+}
+
+#envelope.open {
+    transform: scale(0.9);
+}
+
+/* ===============================
+   LETTER SLIDE-IN
+================================ */
+
+#letter.show {
+    display: block;
+    animation: letterAppear 0.8s ease forwards;
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
